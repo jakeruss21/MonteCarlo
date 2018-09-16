@@ -1,0 +1,45 @@
+1. Create a struct to hold x, y coordinates as doubles. Provide a 2-parameter constructor which takes a new set of coordinates and a 1-parameter constructor which  takes a Random object and uses the NextDouble method to initialize X and Y.
+	
+2. Create a function which takes an x, y coordinate struct and returns a double corresponding to the hypotenuse of a triangle with sides of lengths x, y.
+
+3. Build a Main method which takes one int parameter from the command line and creates an array of that length containing randomly initialized coordinates.
+
+4. Iterate over the array, incrementing a counter for each coordinate which overlaps the unit circle.
+
+5. Using the Length parameter of the array, divide the number of coordinates overlapping the unit circle by the number of array elements. Multiply this value by 4.
+
+6. Print the value from step number 4 along with the absolute value of the difference between your estimate of PI and Math.Pi.
+
+7. Run your program, passing 10, 100, 1000, and 10000 as the command line parameter. Record the output of your program.
+					Est. PI		Abs Difference
+	10 -	1st = 	4			0.858407346410207
+			2nd = 	2.8			0.341592653589793
+			3rd =	3.2			0.0584073464102071
+	
+	100 -	1st = 	3.08		0.061592653589793
+			2nd = 	3.28		0.138407346410207
+			3rd =	3.2			0.0584073464102071
+
+	1000 -	1st =	3.232		0.0904073464102071
+			2nd =	3.136		0.005592653589793
+			3rd =	3.08		0.061592653589793
+
+	10000 -	1st =	3.1432		0.0016073464102071
+			2nd =	3.1428		0.0012073464102067
+			3rd =	3.1212		0.0203926535897931
+	
+	
+	1. Why do we multiply the value from step 5 above by 4?
+		- Because we are looking only at 1/4 of the circle, and we need to take into consideration the whole thing.
+
+	2. What do you observe in the output when running your program with parameters of increasing size?
+		- As you increase the parameters, the result becomes increasingly accurate.
+
+	3. If you run the program multiple times with the same parameter, does the output remain the same? Why or why not?
+		- The result is not the same as each set of coordinates is random.
+
+	4. Find a parameter that requires multiple seconds of run time. What is that parameter? How accurate is the estimated value of PI?
+		- 10000 takes a couple seconds to run, and as we see from the results above, it is more accurate than previous iterations.
+
+	5. Research one other use of Monte-Carlo methods. Record it in your exercise submission and be prepared to discuss it in class.
+		- The Monte-Carlo method can be used to determine the wind energy yield analysis of a wind farm over its lifetime.
