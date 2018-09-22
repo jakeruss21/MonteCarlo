@@ -10,8 +10,28 @@ namespace MonteCarloSolution
     {
         static void Main(string[] args)
         {
-            Random randNum = new Random();
-            int totalPairs = 1000;
+            Random rand = new Random();
+            int totalPairs = 0;
+            double xCoord = 0;
+            double yCoord = 0;
+            Boolean answer = false;
+
+            Console.WriteLine("Please enter number of desired points: ");
+            do
+            {
+
+                try
+                {
+                    totalPairs = int.Parse(Console.ReadLine());
+                    answer = true;
+                }
+                catch (Exception)
+                {
+                    Console.Write("Please enter a valid number:  ");
+                    answer = false;
+                }
+            } while (answer == false);
+
             Coordinates[] coords = new Coordinates[totalPairs];
             double hypotCount = 0;
             double mcPI = 0.0;
@@ -19,9 +39,11 @@ namespace MonteCarloSolution
 
             for(int i = 0; i < coords.Length; i++) // insert coordinate pairs into array of coordinates
             {
-                coords[i] = new Coordinates(totalPairs);
+                xCoord = rand.NextDouble();
+                yCoord = rand.NextDouble();
+                coords[i] = new Coordinates(xCoord, yCoord);
                 Console.WriteLine($"{coords[i].xCoord}, {coords[i].yCoord}"); //Used to check 'randomness'
-                System.Threading.Thread.Sleep(31); // Used because if there isn't a pause between numbers many of the coordinates repeat themselves
+                //System.Threading.Thread.Sleep(31); // Used because if there isn't a pause between numbers many of the coordinates repeat themselves
             }
 
             hypotCount = ManipulateCoordinates.PointInCircle(coords);

@@ -11,12 +11,12 @@ namespace MonteCarloSolution
     {
         public double xCoord, yCoord;
 
-        public Coordinates(int totalPairs) // creates coordinates for each point
+        public Coordinates(double x, double y) // creates coordinates for each point
         {
             Random rand = new Random();
 
-            this.xCoord = rand.NextDouble();
-            this.yCoord = rand.NextDouble();
+            this.xCoord = x;
+            this.yCoord = y;
         }
 
     }
